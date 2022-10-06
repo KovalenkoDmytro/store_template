@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <title>Monvalise</title>
@@ -12,7 +12,40 @@
         </div>
         <div class="header_content">
             <div class="logo">
-
+                <img src="./Assets/img/logo.svg" alt="Monvalise">
+            </div>
+            <div class="search">
+                <i class="icon icon_search"></i>
+                <input type="text" name="search_product" id="search" placeholder="Знайти речі або бренди">
+            </div>
+            <a class="btn" href="#!" title="add_product">Додати товар</a>
+            <div class="language-switcher">
+                <div class="current_language">
+                    <span>Укр</span>
+                    <i class="icon icon_arrow-down"></i>
+                </div>
+                <ul>
+                    <li><span>De</span></li>
+                    <li><span>En</span></li>
+                </ul>
+            </div>
+            <div class="menu_additional">
+                <div class="favorite_products">
+                    <i class="icon icon_heart"></i>
+                    <span class="badge">8</span>
+                </div>
+                <div class="notification">
+                    <i class="icon icon_notification"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="basket">
+                    <i class="icon icon_basket"></i>
+                    <span class="badge">3</span>
+                </div>
+            </div>
+            <div class="user_avatar">
+                <img src="Assets/img/avatars/main_user.png" alt="avatar">
+                <i class="icon icon_arrow-down"></i>
             </div>
         </div>
         <nav class="navigation">
@@ -30,7 +63,137 @@
             </ul>
         </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <section class="breadcrumbs">
+        <ul >
+            <li><a href="#!" title="main">Головна</a></li>
+            <li class="active"><a href="#!" title="products">Каталог одягу</a></li>
+        </ul>
+    </section>
+    <h1 class="page_title">Каталог одягу</h1>
+    <aside class="filters">
+        <div class="filters_title">Фільтри</div>
+        <ul class="filter_items">
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Стать</p>
+                    <i class="icon icon_arrow-down"></i>
+                </div>
+                <ul class="filter_traits">
+                    <li class="filters__item">
+                        <div class="f-group">
+                            <input type="checkbox" name="filter_1" id="filter_1">
+                            <label for="filter_1"><span class="_name">Жінкам</span><span class="_quantity">(64)</span></label>
+                        </div>
+                    </li>
+                    <li class="filters__item">
+                        <div class="f-group">
+                            <input type="checkbox" name="filter_2" id="filter_2">
+                            <label for="filter_2"><span class="_name">Унісекс</span><span class="_quantity">(24)</span></label>
+                        </div>
+                    </li>
+                    <li class="filters__item">
+                        <div class="f-group">
+                            <input type="checkbox" name="filter_3" id="filter_3">
+                            <label for="filter_3"><span class="_name">Чоловікам</span><span class="_quantity">(16)</span></label>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <main>
+        <section class="search">
+            <p class="search_title">Сортувати за:</p>
+            <div class="dropDownList">
+                <p>За замовчуванням</p>
+                <i id="dopDownToggle" class="icon icon_arrow-down"></i>
+                <ul>
+                    <li>За заростанням ціни</li>
+                    <li>За спаданням ціни</li>
+                </ul>
+            </div>
+        </section>
+        <section class="products">
+            <div class="product">
+                <a href="#!" title="">
+                    <i class="icon icon_favorite"></i>
+                    <img class="product_image" src="" alt="">
+                </a>
+                <span class="label_icons"></span>
+                <a class="producer" href="#!" title=""></a>
+                <a class="product_name" href="#!" title=""></a>
+                <div class="additional_information">
+                    <div class="prices">
+                        <span class="_old"></span>
+                        <span class="_current"></span>
+                    </div>
+                    <div>
+                        <div class="location">
+                            <i class="icon icon_point"></i>
+                            <span class="location_name"></span>
+                        </div>
+                        <div class="user">
+                            <img class="user_avatar" src="" alt="" >
+                            <span class="user_name"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="pagination">
+            <button class="btn btn_prev">Попередня</button>
+            <div class="pagination_buttons">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+            </div>
+            <button class="btn btn_next">Наступна</button>
+        </section>
+    </main>
+    <footer>
+        <div class="footer_item">
+            <ul>
+                <li><a href="#!" title="Довідка для покупців">Довідка для покупців</a></li>
+                <li><a href="#!" title="Отримати підтримку">Отримати підтримку</a></li>
+                <li><a href="#!" title="Як купувати">Як купувати</a></li>
+                <li><a href="#!" title="Як залишити корисний відгук">Як залишити корисний відгук</a></li>
+                <li><a href="#!" title="Програма Захисту Покупців">Програма Захисту Покупців</a></li>
+                <li><a href="#!" title="Рекомендації з безпечних покупок">Рекомендації з безпечних покупок</a></li>
+            </ul>
+        </div>
+        <div class="footer_item">
+            <ul>
+                <li><a href="#!" title="Довідка для продавців">Довідка для продавців</a></li>
+                <li><a href="#!" title="Як почати продавати">Як почати продавати</a></li>
+                <li><a href="#!" title="Тарифи">Тарифи</a></li>
+                <li><a href="#!" title="Угода користувача">Угода користувача</a></li>
+                <li><a href="#!" title="Політика конфіденційності">Політика конфіденційності</a></li>
+                <li><a href="#!" title="Правила користування порталом">Правила користування порталом</a></li>
+                <li><a href="#!" title="Бонусна програма">Бонусна програма</a></li>
+            </ul>
+        </div>
+        <div class="footer_item">
+            <ul>
+                <li><a href="#!" title="Про нас">Про нас</a></li>
+                <li><a href="#!" title="Довідка та FAQ">Довідка та FAQ</a></li>
+                <li><a href="#!" title="Захист легальності контенту">Захист легальності контенту</a></li>
+                <li><a href="#!" title="Адміністрація">Адміністрація</a></li>
+                <li><a href="#!" title="Вакансії">Вакансії</a></li>
+            </ul>
+        </div>
+        <div class="footer_item">
+           <p>Мобільний додаток</p>
+            <ul class="banners">
+                <li><a href="#" title="googlePlay"><img src="./Assets/img/app/google-play.png" alt="googlePlay"></a></li>
+            </ul>
+
+        </div>
+    </footer>
 </body>
 </html>
