@@ -1,0 +1,85 @@
+.filters{
+  .filters_title{
+    font-size: 22px;
+    color: #5C5F60;
+    margin-bottom: 25px;
+  }
+  .filter_items{
+    .filter_item{
+      font-size: 14px;
+      border: 1px solid $border_color;
+      .item_head{
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        background-color: $gray_color;
+      }
+      .filter_traits{
+        padding: 15px 25px;
+        li{
+          margin: 15px 0 0;
+          &:first-child{
+            margin: 0;
+          }
+        }
+      }
+      .f-group{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+        input{
+          display: none;
+          &:checked{
+            + label{
+              &::before{
+                content: '';
+                background: $button_background_color;
+                border: 1px solid $button_background_color;
+                color: $background_color;
+                border-radius: $border_radius;
+              }
+              &::after{
+                content: '';
+                left: 7px;
+                top: 50%;
+                transform: translateY(-60%) rotate(45deg);
+                width: 4px;
+                height: 7px;
+                border: solid $background_color;
+                border-width: 0 2px 2px 0;
+                display: block;
+                position: absolute;
+              }
+            }
+
+          }
+        }
+        label{
+          position: relative;
+          display: flex;
+          align-items: center;
+          align-content: center;
+          cursor: pointer;
+          &:before{
+            content: '';
+            background: $background_color;
+            border: 1px solid $border_color;
+            text-align: center;
+            width: 17px;
+            height: 17px;
+            font-size: 14px;
+            transition: border .15s,background-color .15s;
+            left: 0;
+            display: block;
+            margin-right: 15px;
+            border-radius: $border_radius;
+          }
+        }
+        ._quantity{
+          color: #747778;
+        }
+      }
+    }
+  }
+}

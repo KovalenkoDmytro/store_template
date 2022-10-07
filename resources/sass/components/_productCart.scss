@@ -1,0 +1,80 @@
+.product{
+  border: 1px solid $border_color;
+  padding: 25px;
+  border-radius: $border_radius;
+  .product_image{
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    img:not(.image){
+      position: absolute;
+      right: 0;
+    }
+    .image{
+      display: block;
+    }
+    .label_icons{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+  .producer{
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .product_name{
+    display: block;
+    font-size: 14px;
+  }
+  .additional_information{
+    margin-top: 25px;
+    display: flex;
+    align-content: flex-end;
+    align-items: baseline;
+    justify-content: space-between;
+
+  }
+  .prices{
+    span{
+      display: block;
+    }
+    ._old{
+      font-size: 12px;
+      color: #747778;
+      text-decoration: line-through;
+    }
+    ._current{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  .seller{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .location{
+      .location_name{
+        font-size: 12px;
+        color: #2D3132;
+      }
+    }
+    .user{
+      display: flex;
+      align-content: center;
+      align-items: center;
+      font-size: 14px;
+      .user_avatar{
+        width: 20px;
+        height: 20px;
+      }
+      .user_name{
+        margin-left: 10px;
+      }
+    }
+  }
+}

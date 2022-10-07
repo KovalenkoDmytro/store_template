@@ -1,0 +1,33 @@
+.pagination{
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  .btn{
+    background-color: inherit;
+    border-radius: 50%;
+    color: $text_color;
+    border: 2px solid $border_color;
+    height: 34px;
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.btn_prev, &.btn_next{
+      width: inherit;
+      border-radius: 25px;
+    }
+
+  }
+  .pagination_buttons{
+    display: flex;
+    margin: 0 10px;
+    .btn{
+      margin-left: 10px;
+      &:first-child{
+        margin-left: 0;
+      }
+    }
+  }
+}
