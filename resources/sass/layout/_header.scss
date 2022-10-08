@@ -32,6 +32,15 @@
       align-content: center;
       position: relative;
       padding: 7px 15px;
+      .current_language{
+        cursor: pointer;
+        &:hover{
+          color: $link_color_hover;
+          img{
+            filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
+          }
+        }
+      }
       img{
         margin-left: 10px;
       }
@@ -68,6 +77,14 @@
           right: -5px;
         }
       }
+      .favorite_products,.notification,.basket{
+        cursor: pointer;
+        &:hover{
+          img{
+            filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
+          }
+        }
+      }
       .notification{
         .badge{
           background-color: #FF5449;
@@ -80,6 +97,12 @@
       display: flex;
       align-content: center;
       align-items: center;
+      cursor: pointer;
+      &:hover{
+        img:last-child{
+          filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
+        }
+      }
       img:last-child{
         margin-left: 10px;
       }

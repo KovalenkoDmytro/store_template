@@ -242,6 +242,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.5s;
+}
+.product:hover {
+  -webkit-box-shadow: 0px 0px 46px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 46px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 46px -13px rgba(0, 0, 0, 0.75);
 }
 @media (min-width: 757px) {
   .product {
@@ -267,6 +273,9 @@ main {
 .product .product_image img:not(.image) {
   position: absolute;
   right: 0;
+}
+.product .product_image img:not(.image):hover {
+  filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
 }
 .product .product_image .image {
   display: block;
@@ -655,6 +664,15 @@ footer {
   position: relative;
   padding: 7px 15px;
 }
+.header .header_content .language-switcher .current_language {
+  cursor: pointer;
+}
+.header .header_content .language-switcher .current_language:hover {
+  color: #4682ff;
+}
+.header .header_content .language-switcher .current_language:hover img {
+  filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
+}
 .header .header_content .language-switcher img {
   margin-left: 10px;
 }
@@ -691,6 +709,12 @@ footer {
   top: -7px;
   right: -5px;
 }
+.header .header_content .menu_additional .favorite_products, .header .header_content .menu_additional .notification, .header .header_content .menu_additional .basket {
+  cursor: pointer;
+}
+.header .header_content .menu_additional .favorite_products:hover img, .header .header_content .menu_additional .notification:hover img, .header .header_content .menu_additional .basket:hover img {
+  filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
+}
 .header .header_content .menu_additional .notification .badge {
   background-color: #FF5449;
   color: #ffffff;
@@ -699,6 +723,10 @@ footer {
   display: flex;
   align-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.header .header_content .user_avatar:hover img:last-child {
+  filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
 }
 .header .header_content .user_avatar img:last-child {
   margin-left: 10px;
@@ -793,6 +821,17 @@ footer {
 }
 .footer .footer_item .banners {
   margin-top: 10px;
+}
+.footer .right {
+  font-size: 12px;
+  flex: 0 0 100%;
+  padding-top: 40px;
+  border-top: 1px solid #C4C7C7;
+}
+@media (min-width: 979px) {
+  .footer .right {
+    margin: 80px 0 40px;
+  }
 }
 
 .filters .filters_title {
