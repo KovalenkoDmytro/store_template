@@ -149,9 +149,11 @@ aside{
       position: fixed;
       bottom: 0;
       max-width: initial;
-      width: 100%;
+      width: 90vw;
       border-radius: 0;
-
+      @include tablet{
+        width: 50vw;
+      }
       @include laptop{
         display: none;
       }

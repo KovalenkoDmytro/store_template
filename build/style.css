@@ -1135,8 +1135,13 @@ aside.filters .choose_filters {
   position: fixed;
   bottom: 0;
   max-width: initial;
-  width: 100%;
+  width: 90vw;
   border-radius: 0;
+}
+@media (min-width: 757px) {
+  aside.filters .choose_filters {
+    width: 50vw;
+  }
 }
 @media (min-width: 979px) {
   aside.filters .choose_filters {
