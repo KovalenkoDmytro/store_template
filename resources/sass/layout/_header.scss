@@ -1,3 +1,6 @@
+
+
+
 .header {
   grid-area: header;
 
@@ -19,15 +22,46 @@
       background-color: #CBDCFF;
       z-index: -1;
     }
+    .banner_icons{
+      display: flex;
+      align-content: center;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .banner_text{
+      text-align: center;
+      font-size: 12px;
+      @media (min-width: 450px){
+        font-size: initial;
+      }
+    }
   }
 
   .header_content {
     display: flex;
-    padding: 25px 0;
+    padding: 25px 0 10px;
     align-items: center;
     justify-content: space-between;
+    @include laptop{
+      padding: 25px 0;
+    }
+    .searching{
+      display: none;
+      @include laptop{
+        display: block;
+      }
+    }
+    .btn_add_product{
+      display: none;
+      @include laptop{
+        display: block;
+      }
+    }
     .language-switcher{
-      display: flex;
+      display: none;
+      @include laptop{
+        display: flex;
+      }
       align-items: center;
       align-content: center;
       position: relative;
@@ -58,10 +92,13 @@
       }
     }
     .menu_additional {
-      display: flex;
+      display: none;
       align-items: center;
       align-content: center;
       margin-top: 5px;
+      @include laptop{
+        display: flex;
+      }
       > div {
         position: relative;
         margin-left: 20px;
@@ -94,10 +131,13 @@
 
     }
     .user_avatar{
-      display: flex;
+      display: none;
       align-content: center;
       align-items: center;
       cursor: pointer;
+      @include laptop{
+        display: flex;
+      }
       &:hover{
         img:last-child{
           filter: invert(42%) sepia(98%) saturate(1857%) hue-rotate(205deg) brightness(100%) contrast(102%);
@@ -107,12 +147,39 @@
         margin-left: 10px;
       }
     }
+    .menu_burger{
+      width: 30px;
+      @include laptop{
+        display: none;
+      }
+    }
   }
 
   .navigation {
-    display: none;
+    @media (max-width: 978px){
+      display: block;
+      width: 90vw;
+      height: 100%;
+      background-color: $background_color;
+      color: $text_color;
+      font-size: 25px;
+      padding: 20px 0;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      right: -100%;
+      .filters_title{
+        padding: 0 25px;
+      }
+    }
+    @include tablet {
+      width: 50vw;
+    }
     position: relative;
     @include laptop{
+      width: initial;
       display: block;
     }
     &:before {
@@ -128,10 +195,17 @@
     }
 
     ul {
-      display: flex;
-      flex-wrap: wrap;
+      @include laptop{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
 
       li {
+        border-bottom: 1px solid $border_color;
+        @include laptop{
+          border-bottom: none;
+        }
         a {
           display: block;
           padding: 15px;

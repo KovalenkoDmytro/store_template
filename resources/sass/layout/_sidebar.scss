@@ -1,167 +1,223 @@
-.filters{
-  .filters_title{
-    font-size: 22px;
-    color: #5C5F60;
-    margin-bottom: 25px;
+.btn_filters{
+  margin-bottom: 20px;
+  max-width: initial;
+  width: 100%;
+  @include tablet{
+    width: 30%;
+    margin-left: auto;
   }
-  .filter_items{
-    .filter_item{
-      font-size: 14px;
-      &.active{
-        .filter_traits{
-          display: block;
+  @include laptop{
+    display: none;
+  }
+}
+
+
+aside{
+  @media (max-width: 978px){
+    display: block;
+    width: 90vw;
+    height: 100%;
+    background-color: $background_color;
+    color: $text_color;
+    font-size: 25px;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    right: -100%;
+    .filters_title{
+      padding: 0 25px;
+    }
+  }
+  @include tablet {
+    width: 50vw;
+  }
+
+
+  @include laptop{
+    width: 25%;
+  }
+
+  &.filters{
+    .filters_title{
+      font-size: 22px;
+      color: #5C5F60;
+      margin-bottom: 25px;
+    }
+    .filter_items{
+      .filter_item{
+        font-size: 14px;
+        &.active{
+          .filter_traits{
+            display: block;
+          }
+          .item_head{
+            img{
+              transform: rotate(-180deg);
+            }
+          }
         }
         .item_head{
-          img{
-            transform: rotate(-180deg);
-          }
-        }
-      }
-      .item_head{
-        padding: 15px 25px;
-        display: flex;
-        justify-content: space-between;
-        background-color: $gray_color;
-        cursor: pointer;
-        &:hover{
-          background-color:#CFD2D2;
-        }
-      }
-      .filter_traits{
-        display: none;
-        padding: 15px 25px;
-        border: 1px solid $border_color;
-        border-top: none;
-        li{
-          margin: 15px 0 0;
-          &:first-child{
-            margin: 0;
-          }
-        }
-      }
-      .f-group{
-        display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: space-between;
-        @include transition;
-        &:hover{
-          color: $link_color_hover;
-        }
-        input{
-          display: none;
-          &:checked{
-            + label{
-              color: $link_color_hover;
-              &::before{
-                content: '';
-                background: $button_background_color;
-                border: 1px solid $button_background_color;
-                color: $background_color;
-                border-radius: $border_radius;
-              }
-              &::after{
-                content: '';
-                left: 7px;
-                top: 50%;
-                transform: translateY(-60%) rotate(45deg);
-                width: 4px;
-                height: 7px;
-                border: solid $background_color;
-                border-width: 0 2px 2px 0;
-                display: block;
-                position: absolute;
-              }
-            }
-
-          }
-        }
-        label{
-          position: relative;
+          padding: 15px 25px;
           display: flex;
-          align-items: center;
-          align-content: center;
+          justify-content: space-between;
+          background-color: $gray_color;
           cursor: pointer;
-          &:before{
-            content: '';
-            background: $background_color;
-            border: 1px solid $border_color;
-            text-align: center;
-            width: 17px;
-            height: 17px;
-            font-size: 14px;
-            transition: border .15s,background-color .15s;
-            left: 0;
-            display: block;
-            margin-right: 15px;
-            border-radius: $border_radius;
+          &:hover{
+            background-color:#CFD2D2;
           }
         }
-        ._quantity{
+        .filter_traits{
+          display: none;
+          padding: 15px 25px;
+          border: 1px solid $border_color;
+          border-top: none;
+          li{
+            margin: 15px 0 0;
+            &:first-child{
+              margin: 0;
+            }
+          }
+        }
+        .f-group{
+          display: flex;
+          align-content: center;
+          align-items: center;
+          justify-content: space-between;
+          @include transition;
+          &:hover{
+            color: $link_color_hover;
+          }
+          input{
+            display: none;
+            &:checked{
+              + label{
+                color: $link_color_hover;
+                &::before{
+                  content: '';
+                  background: $button_background_color;
+                  border: 1px solid $button_background_color;
+                  color: $background_color;
+                  border-radius: $border_radius;
+                }
+                &::after{
+                  content: '';
+                  left: 7px;
+                  top: 50%;
+                  transform: translateY(-60%) rotate(45deg);
+                  width: 4px;
+                  height: 7px;
+                  border: solid $background_color;
+                  border-width: 0 2px 2px 0;
+                  display: block;
+                  position: absolute;
+                }
+              }
+
+            }
+          }
+          label{
+            position: relative;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            cursor: pointer;
+            &:before{
+              content: '';
+              background: $background_color;
+              border: 1px solid $border_color;
+              text-align: center;
+              width: 17px;
+              height: 17px;
+              font-size: 14px;
+              transition: border .15s,background-color .15s;
+              left: 0;
+              display: block;
+              margin-right: 15px;
+              border-radius: $border_radius;
+            }
+          }
+          ._quantity{
+            color: #747778;
+          }
+        }
+      }
+    }
+    .choose_filters{
+      position: fixed;
+      bottom: 0;
+      max-width: initial;
+      width: 100%;
+      border-radius: 0;
+
+      @include laptop{
+        display: none;
+      }
+    }
+
+    .pricerRange{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-gap: 25px;
+      .pricerRange_item{
+        label{
+          font-size: 12px;
           color: #747778;
         }
-      }
-    }
-  }
-
-  .pricerRange{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 25px;
-    .pricerRange_item{
-      label{
-        font-size: 12px;
-        color: #747778;
-      }
-      input{
-        padding: 10px 0 15px;
-        border: none;
-        color: $text_color;
-        width: 100%;
-        border-bottom: 1px solid $border_color;
-        font-size: 12px;
-        &::placeholder{
-          color: $text_color;
-        }
-
-        &:focus{
-          outline: none;
+        input{
+          padding: 10px 0 15px;
           border: none;
+          color: $text_color;
+          width: 100%;
+          border-bottom: 1px solid $border_color;
+          font-size: 12px;
+          &::placeholder{
+            color: $text_color;
+          }
+
+          &:focus{
+            outline: none;
+            border: none;
+          }
         }
       }
     }
-  }
 
-  .noUi-target{
-    margin: 10px 0 30px;
-    box-shadow: none;
-    border: none;
-    background-color: #C4C7C7;
-    border-radius:0;
-    &.noUi-horizontal{
-      height: 4px;
-    }
-    .noUi-handle{
-      height: 16px;
-      width: 16px;
-      cursor: pointer;
-      background-color: #5C5F60;
-      border-radius: $border_radius;
+    .noUi-target{
+      margin: 10px 0 30px;
       box-shadow: none;
-      right: -10px;
-      &:before, &:after{
-        content: initial;
+      border: none;
+      background-color: #C4C7C7;
+      border-radius:0;
+      &.noUi-horizontal{
+        height: 4px;
       }
-    }
-    .noUi-base{
-      .noUi-connects{
-        border-radius: 0;
-        .noUi-connect{
-          background-color: #8E9192;
+      .noUi-handle{
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        background-color: #5C5F60;
+        border-radius: $border_radius;
+        box-shadow: none;
+        right: -10px;
+        &:before, &:after{
+          content: initial;
         }
       }
+      .noUi-base{
+        .noUi-connects{
+          border-radius: 0;
+          .noUi-connect{
+            background-color: #8E9192;
+          }
+        }
 
+      }
     }
-  }
 
+  }
 }
+
+

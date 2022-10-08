@@ -72,3 +72,52 @@ const initAccordion = ()=>{
 initAccordion()
 // accordion in filters -- end--
 
+
+// filters sidebar --- start---
+const initFilters_mobile =()=> {
+    if(window.innerWidth <= 979){
+        const html = document.querySelector('html')
+        const filtersToggle_btn = document.querySelector('#filters_toggle')
+        const filters = document.querySelector('#filters')
+
+        // open/close sideBar
+        filtersToggle_btn.addEventListener('click', ()=>{
+            html.classList.add('sidebar_open')
+        })
+
+        html.addEventListener('click',(event)=>{
+            if(html.classList.contains('sidebar_open')) {
+                if(event.target.closest('.filter_items') === null && event.target.id !== 'filters_toggle'){
+                    html.classList.remove('sidebar_open')
+                }
+            }
+        })
+    }
+}
+initFilters_mobile()
+// filters sidebar --- end---
+
+// mobile-navigation  --- start---
+const initNavigation_mobile =()=>{
+    if(window.innerWidth <= 979){
+        const html = document.querySelector('html')
+        const navigationToggle_btn = document.querySelector('#menu_burger')
+        const navigation = document.querySelector('#navigation')
+
+        // open/close sideBar
+        navigationToggle_btn.addEventListener('click', ()=>{
+            html.classList.add('navigation_open')
+        })
+
+        html.addEventListener('click',(event)=>{
+            if(html.classList.contains('navigation_open')) {
+                if(event.target.closest('nav') === null && event.target.id !== 'menu_burger'){
+                    html.classList.remove('navigation_open')
+                }
+            }
+        })
+    }
+}
+initNavigation_mobile()
+// mobile-navigation  --- end---
+

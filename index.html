@@ -14,7 +14,7 @@
     <header class="header">
         <div class="top-banner">
             <div class="banner_icons">
-                <img src="Assets/img/icons/banner1_1.svg">
+                <img src="Assets/img/icons/banner1_1.png">
                 <img src="Assets/img/icons/banner1.svg">
             </div>
             <p class="banner_text">Брендовий верхній одяг від 899 грн</p>
@@ -27,7 +27,7 @@
                 <img src="Assets/img/icons/search.svg">
                 <input type="text" name="search_product" id="search" placeholder="Знайти речі або бренди">
             </div>
-            <a class="btn" href="#!" title="add_product">Додати товар</a>
+            <a class="btn btn_add_product" href="#!" title="add_product">Додати товар</a>
             <div class="language-switcher">
                 <div class="current_language">
                     <span>Укр</span>
@@ -56,8 +56,9 @@
                 <img src="Assets/img/avatars/main_user.png" alt="avatar">
                 <img src="Assets/img/icons/arrow_down.svg">
             </div>
+            <img id="menu_burger" class="menu_burger" src="./Assets/img/icons/menu.svg" alt="nav">
         </div>
-        <nav class="navigation">
+        <nav id="navigation" class="navigation">
             <ul>
                 <li><a href="#!" title="Головна">Головна</a></li>
                 <li><a href="#!" title="Каталог">Каталог</a></li>
@@ -79,6 +80,7 @@
             </ul>
         </section>
         <h1 class="page_title">Каталог одягу</h1>
+        <button id="filters_toggle" class="btn btn_filters" >Фільтри</button>
     </header>
     <aside id="filters" class="filters">
         <div class="filters_title">Фільтри</div>
@@ -196,6 +198,7 @@
                 </ul>
             </li>
         </ul>
+        <button id="choose" class="btn choose_filters" >Застосувати фільтри</button>
     </aside>
     <main class="">
         <section class="search">
@@ -439,8 +442,12 @@
             </div>
         </section>
         <section class="pagination">
-            <button class="btn btn_prev">Попередня</button>
+            <button class="btn btn_prev">
+                <img src="Assets/img/icons/arrow_down.svg">
+                <span>Попередня</span>
+            </button>
             <div class="pagination_buttons">
+                <span class="more">...</span>
                 <button class="btn">1</button>
                 <button class="btn active">2</button>
                 <button class="btn">3</button>
@@ -449,8 +456,12 @@
                 <button class="btn">6</button>
                 <button class="btn">7</button>
                 <button class="btn">8</button>
+                <span class="more">...</span>
             </div>
-            <button class="btn btn_next">Наступна</button>
+            <button class="btn btn_next">
+                <img src="Assets/img/icons/arrow_down.svg">
+                <span>Наступна</span>
+            </button>
         </section>
     </main>
     <footer class="footer">

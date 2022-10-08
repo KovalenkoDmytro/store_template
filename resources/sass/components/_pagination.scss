@@ -11,10 +11,16 @@
     border: 2px solid $border_color;
     min-width: 34px;
     height: 34px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 0;
+    @include laptop{
+      display: flex;
+    }
+    &.active{
+      display: flex;
+    }
     &.active , &:hover{
       min-width: 40px;
       height: 40px;
@@ -23,15 +29,33 @@
       color: $text_color;
     }
     &.btn_prev, &.btn_next{
+      display: flex;
       max-width: initial;
       border-radius: 25px;
-      padding: 10px 20px;
+      font-size: 0;
       &:hover{
         min-width: 34px;
         height: 34px;
       }
-    }
 
+      @include laptop{
+        font-size: 12px;
+        padding: 10px 20px;
+        img{
+          display: none;
+        }
+      }
+    }
+    &.btn_next{
+      img{
+        transform: rotate(-90deg);
+      }
+    }
+    &.btn_prev{
+      img{
+        transform: rotate(90deg);
+      }
+    }
   }
   .pagination_buttons{
     display: flex;
@@ -39,6 +63,12 @@
     align-items: center;
     align-content: center;
     justify-content: space-around;
+    .more{
+      margin: 0 10px;
+      @include laptop{
+        display: none;
+      }
+    }
     .btn{
       margin-left: 10px;
       &:first-child{

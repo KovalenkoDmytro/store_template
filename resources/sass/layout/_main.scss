@@ -1,3 +1,48 @@
+html{
+
+  &.sidebar_open,&.navigation_open{
+    overflow: hidden;
+    body {
+      position: relative;
+
+      &:before {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.50);
+        z-index: 2;
+        right: 0;
+        pointer-events: none;
+        content: '';
+      }
+
+    }
+  }
+
+  &.sidebar_open{
+    @media (max-width: 978px) {
+      aside {
+        right: 0;
+        z-index: 3;
+        transition: right 200ms ease 200ms;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  &.navigation_open{
+    @media (max-width: 978px) {
+      .navigation {
+        right: 0;
+        z-index: 3;
+        transition: right 200ms ease 200ms;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+
 .container {
   margin: 0 auto;
   display: flex;
@@ -18,14 +63,7 @@
 header{
   width: 100%;
 }
-aside{
-  display: none;
 
-  @include laptop{
-    display: block;
-    width: 25%;
-  }
-}
 main{
   width: 100%;
   @include laptop{
@@ -56,9 +94,11 @@ footer{
   margin-bottom: 15px;
   @include tablet{
     font-size: 28px;
+    margin-bottom: 0;
+  }
+  @include laptop{
     margin-bottom: 35px;
   }
-
 }
 .btn {
   font-size: 12px;
