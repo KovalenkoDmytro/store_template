@@ -19,10 +19,18 @@ header{
   width: 100%;
 }
 aside{
-  width: 25%;
+  display: none;
+
+  @include laptop{
+    display: block;
+    width: 25%;
+  }
 }
 main{
-  width: 75%;
+  width: 100%;
+  @include laptop{
+    width: 75%;
+  }
 }
 footer{
   width: 100%;
@@ -44,8 +52,13 @@ footer{
   background-color: $primary_color;
 }
 .page_title{
-  font-size: 28px;
-  margin-bottom: 35px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  @include tablet{
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
 }
 .btn {
   font-size: 12px;

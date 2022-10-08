@@ -1,7 +1,33 @@
 .search{
   display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+  font-size: 12px;
+  margin-bottom: 25px;
   .search_title{
     color: #5C5F60;
     margin-right: 15px;
+  }
+}
+
+.searching{
+  display: flex;
+  border: 1px solid $border_color;
+  padding: 7px 10px;
+  border-radius: $border_radius;
+  margin-left: 70px;
+  @include desktop{
+    width: 46%;
+  }
+  input{
+    width: 100%;
+    border: none;
+    margin-left: 10px;
+    font-size: 12px;
+    &:focus{
+      outline: none;
+      border: none;
+    }
   }
 }

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Monvalise</title>
     <link rel="stylesheet" href="./build/style.css">
+    <link rel="stylesheet" href="./Assets/css/nouislider.min.css">
+
+    <script src="./Assets/js/nouislider.min.js" defer></script>
     <script src="./build/main.js" defer></script>
 </head>
 <body>
@@ -20,8 +23,8 @@
             <div class="logo">
                 <img src="./Assets/img/logo.svg" alt="Monvalise">
             </div>
-            <div class="search">
-                <i class="icon icon_search"></i>
+            <div class="searching">
+                <img src="Assets/img/icons/search.svg">
                 <input type="text" name="search_product" id="search" placeholder="Знайти речі або бренди">
             </div>
             <a class="btn" href="#!" title="add_product">Додати товар</a>
@@ -30,10 +33,10 @@
                     <span>Укр</span>
                     <img src="Assets/img/icons/arrow_down.svg">
                 </div>
-                <ul>
-                    <li><span>De</span></li>
-                    <li><span>En</span></li>
-                </ul>
+<!--                <ul>-->
+<!--                    <li><span>De</span></li>-->
+<!--                    <li><span>En</span></li>-->
+<!--                </ul>-->
             </div>
             <div class="menu_additional">
                 <div class="favorite_products">
@@ -77,10 +80,10 @@
         </section>
         <h1 class="page_title">Каталог одягу</h1>
     </header>
-    <aside class="filters">
+    <aside id="filters" class="filters">
         <div class="filters_title">Фільтри</div>
         <ul class="filter_items">
-            <li class="filter_item">
+            <li class="filter_item active">
                 <div class="item_head">
                     <p class="filter_title">Стать</p>
                     <img src="Assets/img/icons/arrow_down.svg">
@@ -109,6 +112,89 @@
                     </li>
                 </ul>
             </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Категорії</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Продавець</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Бренд</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item active">
+                <div class="item_head">
+                    <p class="filter_title">Ціна</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                    <div id="priceSlider"></div>
+                    <div class="pricerRange">
+                        <div class="pricerRange_item">
+                            <label for="price_from">Від</label>
+                            <input type="text" name="price_from" id="price_from" >
+                        </div>
+                        <div class="pricerRange_item">
+                            <label for="price_to">До</label>
+                            <input type="text" name="price_to" id="price_to">
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Розмір</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Колір</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Матеріал</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Сезон</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
+            <li class="filter_item">
+                <div class="item_head">
+                    <p class="filter_title">Стиль</p>
+                    <img src="Assets/img/icons/arrow_down.svg">
+                </div>
+                <ul class="filter_traits">
+                </ul>
+            </li>
         </ul>
     </aside>
     <main class="">
@@ -117,10 +203,10 @@
             <div class="dropDownList">
                 <p>За замовчуванням</p>
                 <img src="Assets/img/icons/arrow_down.svg">
-                <ul>
-                    <li>За заростанням ціни</li>
-                    <li>За спаданням ціни</li>
-                </ul>
+<!--                <ul class="list_items">-->
+<!--                    <li>За заростанням ціни</li>-->
+<!--                    <li>За спаданням ціни</li>-->
+<!--                </ul>-->
             </div>
         </section>
         <section class="products">
@@ -356,7 +442,7 @@
             <button class="btn btn_prev">Попередня</button>
             <div class="pagination_buttons">
                 <button class="btn">1</button>
-                <button class="btn">2</button>
+                <button class="btn active">2</button>
                 <button class="btn">3</button>
                 <button class="btn">4</button>
                 <button class="btn">5</button>

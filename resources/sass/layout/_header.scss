@@ -26,12 +26,33 @@
     padding: 25px 0;
     align-items: center;
     justify-content: space-between;
-
+    .language-switcher{
+      display: flex;
+      align-items: center;
+      align-content: center;
+      position: relative;
+      padding: 7px 15px;
+      img{
+        margin-left: 10px;
+      }
+      ul{
+        position: absolute;
+        top: calc(100% + 5px);
+        background-color: $background_color;
+        border: 1px solid $border_color;
+        z-index: 2;
+        width: 100%;
+        right: 0;
+        li{
+          padding: 7px 15px;
+        }
+      }
+    }
     .menu_additional {
       display: flex;
       align-items: center;
       align-content: center;
-
+      margin-top: 5px;
       > div {
         position: relative;
         margin-left: 20px;
@@ -66,7 +87,11 @@
   }
 
   .navigation {
+    display: none;
     position: relative;
+    @include laptop{
+      display: block;
+    }
     &:before {
       content: '';
       position: absolute;

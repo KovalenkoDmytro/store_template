@@ -1,17 +1,38 @@
 .product{
   border: 1px solid $border_color;
-  padding: 25px;
+  padding: 10px;
   border-radius: $border_radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include tablet{
+    padding: 15px;
+  }
+  @include laptop{
+    padding: 20px;
+  }
+  @include desktop{
+    padding: 25px;
+  }
   .product_image{
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
     margin-bottom: 15px;
+
     img:not(.image){
       position: absolute;
       right: 0;
     }
     .image{
       display: block;
+      max-height: 145px;
+      @include tablet{
+        max-height: 220px;
+      }
+      @include desktop{
+        max-height: 265px;
+      }
     }
     .label_icons{
       position: absolute;
@@ -31,14 +52,30 @@
     font-size: 14px;
   }
   .additional_information{
-    margin-top: 25px;
+    margin-top: 15px;
     display: flex;
-    align-content: flex-end;
-    align-items: baseline;
+    flex-wrap: wrap;
     justify-content: space-between;
-
+    flex-direction: column;
+    @include mobile{
+      align-content: flex-end;
+      align-items: baseline;
+      flex-direction: row;
+    }
+    @include laptop{
+      margin-top: 20px;
+    }
+    @include desktop{
+      margin-top: 25px;
+    }
   }
   .prices{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    @include mobile{
+      flex-direction: column;
+    }
     span{
       display: block;
     }
@@ -57,6 +94,10 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    margin-top: 10px;
+    @include mobile{
+      margin-top: 0;
+    }
     .location{
       .location_name{
         font-size: 12px;
@@ -67,7 +108,10 @@
       display: flex;
       align-content: center;
       align-items: center;
-      font-size: 14px;
+      font-size: 12px;
+      @include mobile{
+        font-size: 14px;
+      }
       .user_avatar{
         width: 20px;
         height: 20px;

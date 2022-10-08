@@ -1,10 +1,18 @@
 @font-face {
   font-family: 'Stolzl';
-  src: local('./Assets/fonts/Stolzl-Medium.eot'), local('eot'),
-  url('./Assets/fonts/Stolzl-Medium.woff2') format('woff2'),
-  url('./Assets/fonts/Stolzl-Medium.woff') format('woff'),
-  url('./Assets/fonts/Stolzl-Medium.woff2') format('ttf');
+  src: local('Stolzl Medium'), local('Stolzl-Medium'),
+  url('Stolzl-Medium.woff2') format('woff2'),
+  url('Stolzl-Medium.woff') format('woff'),
+  url('Stolzl-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'Stolzl';
+  src: local('Stolzl Regular'), local('Stolzl-Regular'),
+  url('Stolzl-Regular.woff2') format('woff2'),
+  url('Stolzl-Regular.woff') format('woff'),
+  url('Stolzl-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

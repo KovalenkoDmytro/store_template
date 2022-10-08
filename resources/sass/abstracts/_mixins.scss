@@ -3,6 +3,12 @@
   transition : all .5s;
 }
 
+@mixin mobile {
+  @media (min-width: 375px) {
+    @content
+  }
+}
+
 @mixin tablet {
   @media (min-width: 757px) {
     @content

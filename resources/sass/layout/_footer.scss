@@ -1,9 +1,15 @@
 .footer{
   grid-area: footer;
   position: relative;
-  padding: 70px 0 40px ;
+  padding: 40px 0;
   display: flex;
   flex-wrap: wrap;
+  @include tablet{
+    padding: 50px 0 40px ;
+  }
+  @include laptop{
+    padding: 70px 0 40px ;
+  }
   &:before{
     content: '';
     position: absolute;
@@ -16,18 +22,31 @@
     z-index: -1;
   }
   .footer_item{
+    margin-bottom: 25px;
     flex: 0 0 100%;
     @include tablet{
       flex: 0 0 50%;
+      margin-bottom: 50px;
     }
     @include laptop{
       flex: 0 0 25%;
+      margin-bottom: initial;
+      padding-left: 25px;
     }
+    &:first-child{
+      @include laptop{
+        padding-left: initial;
+      }
+    }
+
     li{
       margin-top: 15px;
       &:first-child{
         margin-top: 0;
       }
+    }
+    .banners{
+      margin-top: 10px;
     }
   }
 }
