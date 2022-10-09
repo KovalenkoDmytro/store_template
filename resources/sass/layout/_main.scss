@@ -1,5 +1,4 @@
 html{
-
   &.sidebar_open,&.navigation_open{
     overflow: hidden;
     body {
@@ -17,6 +16,12 @@ html{
         content: '';
       }
 
+    }
+    .choose_filters,.btn_add_product{
+      right: 0;
+      z-index: 3;
+      transition: right 200ms ease 200ms;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -83,6 +88,8 @@ footer{
   }
 }
 .badge{
+  display: block;
+  text-align: center;
   border-radius: 50%;
   font-size: 10px;
   height: 14px;

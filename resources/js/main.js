@@ -78,7 +78,6 @@ const initFilters_mobile =()=> {
     if(window.innerWidth <= 979){
         const html = document.querySelector('html')
         const filtersToggle_btn = document.querySelector('#filters_toggle')
-        const filters = document.querySelector('#filters')
 
         // open/close sideBar
         filtersToggle_btn.addEventListener('click', ()=>{
@@ -103,12 +102,16 @@ const initNavigation_mobile =()=>{
         const html = document.querySelector('html')
         const navigationToggle_btn = document.querySelector('#menu_burger')
         const navigation = document.querySelector('#navigation')
+        const searching = document.querySelector('#searching')
+        const btnAddProduct = document.querySelector('#btn_add_product')
+        const languageSwitcher = document.querySelector('#language-switcher')
+        const menuAdditional = document.querySelector('#menu_additional')
+        const userAvatar = document.querySelector('#user_avatar')
 
         // open/close sideBar
         navigationToggle_btn.addEventListener('click', ()=>{
             html.classList.add('navigation_open')
         })
-
         html.addEventListener('click',(event)=>{
             if(html.classList.contains('navigation_open')) {
                 if(event.target.closest('nav') === null && event.target.id !== 'menu_burger'){
@@ -116,7 +119,24 @@ const initNavigation_mobile =()=>{
                 }
             }
         })
+
+        const wrapper = document.createElement('div')
+        wrapper.classList.add('user')
+        wrapper.append(userAvatar)
+        wrapper.append(menuAdditional)
+
+
+        navigation.prepend(searching)
+        navigation.prepend(wrapper)
+
+        navigation.append(btnAddProduct)
+        navigation.append(languageSwitcher)
     }
+
+
+
+
+
 }
 initNavigation_mobile()
 // mobile-navigation  --- end---

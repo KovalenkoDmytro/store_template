@@ -12,11 +12,15 @@
 }
 
 .searching{
-  display: flex;
+  display: none;
   border: 1px solid $border_color;
   padding: 7px 10px;
   border-radius: $border_radius;
-  margin-left: 70px;
+  margin: 10px 0;
+  @include laptop{
+    display: flex;
+    margin: 0 0 0 70px;
+  }
   @include desktop{
     width: 46%;
   }
